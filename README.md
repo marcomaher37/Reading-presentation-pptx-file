@@ -29,30 +29,30 @@ for eachfile in glob.glob("*.pptx"):
     print("....................")
 ## The source code
     # install python-pptx
-pip install python-pptx
+    pip install python-pptx
 
-# install glob
-pip install glob
+    # install glob
+    pip install glob
 
-# import glob library
-import glob
+    # import glob library
+    import glob
 
-# import presentation from glob
-from pptx import Presentation
+    # import presentation from glob
+    from pptx import Presentation
 
-# fpr loop to read each slide in the pptx
-for eachfile in glob.glob("*.pptx"):
-  # choose the file we want to read
-  prs = Presentation("Test.pptx")
-  # to read slides one by one
-  for slide in prs.slides:
-    # read the text in each slide
-    for shape in slide.shapes:
-      # if condition to check if this is a text or not
-      if hasattr(shape, "text"):
-        text=shape.text
-        # print the text
-        print(text)
-    # take line after each slide in the file
-    print("....................")
+    # fpr loop to read each slide in the pptx
+    for eachfile in glob.glob("*.pptx"):
+      # choose the file we want to read
+      prs = Presentation("Test.pptx")
+      # to read slides one by one
+      for slide in prs.slides:
+        # read the text in each slide
+        for shape in slide.shapes:
+          # if condition to check if this is a text or not
+          if hasattr(shape, "text"):
+            text=shape.text
+            # print the text
+            print(text)
+        # take line after each slide in the file
+        print("....................") 
 
